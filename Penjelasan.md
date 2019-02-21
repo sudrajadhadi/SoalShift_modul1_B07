@@ -10,9 +10,11 @@
    
 ### b. Tentukan tiga product line yang memberikan penjualan(quantity) terbanyak pada soal poin a
 
-    awk -F ',' '{if($7=='2012' && $1=="United States") y[$4]+=$10} END {for(ans in y) {print p[ans],ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3}'
-
 * progam akan mengaktifkan awk yang dipisahkan oleh spasi, kemudian dicari tahun 2012 dan negara yang sama dengan hasil soal poin a,  hasil data yang dicari akan disimpan dalam array bernama y dan diurutkan secara descending, kemudian 3 data teratas akan ditampilkan pada layar
+
+```bash
+awk -F ',' '{if($7=='2012' && $1=="United States") y[$4]+=$10} END {for(ans in y) {print p[ans],ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3}'
+```
 
 ### c. Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin b.
 
