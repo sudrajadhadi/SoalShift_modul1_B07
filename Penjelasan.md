@@ -13,3 +13,28 @@
     awk -F ',' '{if($7=='2012' && $1=="United States") y[$4]+=$10} END {for(ans in y) {print p[ans],ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3}'
 
 * progam akan mengaktifkan awk yang dipisahkan oleh spasi, kemudian dicari tahun 2012 dan negara yang sama dengan hasil soal poin a,  hasil data yang dicari akan disimpan dalam array bernama y dan diurutkan secara descending, kemudian 3 data teratas akan ditampilkan pada layar
+
+### c. Tentukan tiga product yang memberikan penjualan(quantity) terbanyak berdasarkan tiga product line yang didapatkan pada soal poin b.
+
+* Untuk product line "Outdoor Protection"
+
+    ```bash
+    awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Outdoor Protection") a[$6]+=$10} END {for(ans in a) {print p[ans], ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
+    ```
+    
+    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Outdoor Protection"
+    
+* Untuk product line "Camping Equipment"
+
+    ```bash
+    awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Camping Equipment") b[$6]+=$10} END {for(ans in b) {print p[ans], ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
+    ```
+    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Camping Equipment"
+    
+* Untuk product line "Personal Accessories"
+
+    ```bash
+    awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Personal Accessories") c[$6]+=$10} END {for(ans in c) {print c[ans], ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
+    ```
+    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Personal Accessories"
+    
