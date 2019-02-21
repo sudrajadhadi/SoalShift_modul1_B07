@@ -18,20 +18,22 @@
 
 * Untuk product line "Outdoor Protection"
 
+    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Outdoor Protection"
+
     ```bash
     awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Outdoor Protection") a[$6]+=$10} END {for(ans in a) {print p[ans], ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
     ```
     
-    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Outdoor Protection"
-    
 * Untuk product line "Camping Equipment"
+
+    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Camping Equipment"
 
     ```bash
     awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Camping Equipment") b[$6]+=$10} END {for(ans in b) {print p[ans], ans}}' WA_Sales_Products_2012-14.csv | sort -nr | awk 'NR<=3 {print $2,$3,$4}'
     ```
-    * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Camping Equipment"
     
 * Untuk product line "Personal Accessories"
+
     * Progam berfungsi sama seperti poin b, tetapi ada penambahan kondisi dimana progam tersebut akan mengecek apakah data tersebut sesuai dengan product line "Personal Accessories"
 
     ```bash
