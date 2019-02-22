@@ -1,20 +1,18 @@
 #!/bin/bash
 
-hour=$(date +"%H")
+read file
 
-if [[ ${hour:0:1} -eq 0 ]]
-then
-    hour=${hour:1:1}
-fi
+up=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+lo=abcdefghijklmnopqrstuvwxyz
 
-balik=26-$hour
+x1=($(echo ${up[@]})$(echo ${up[@]}))
+x2=($(echo ${lo[@]})$(echo ${lo[@]}))
+hour=${file:0:2}
+x=$hour
 
-kecil=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
-syslog=$(</var/log/syslog)
-syslog=$(echo "$syslog" | tr "${kecil:0:26}" "${kecil:${balik}:26}")
+hasil1=($(echo ${A[@]})$(echo ${B[@]}))
+kata1=$(echo $A | tr "${up:0:26}" "${x1:${x}:26}")
+kata2=$(echo $B | tr "${lo:0:26}" "${x2:${x}:26}")
+hasil2=($(echo ${kata1[@]})$(echo ${kata2[@]}))
 
-besar=ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
-nama_file=$(echo "$syslog" | tr "${besar:0:26}" "${besar:${balik}:26}")
-
-thishour=$(date +"%H:%M %d-%m-%Y")
-echo "$syslog" > "$nama_file_dekripsi".log
+< "$file" > "$file dec" tr "$hasil2" "$hasil1"
