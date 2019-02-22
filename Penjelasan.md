@@ -137,7 +137,33 @@ Backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan
 <li>Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke empat belas, dan seterusnya
 <li>setelah huruf z akan kembali ke huruf a
 <li>Backup file syslog setiap jam
-<li>Buatkan juga bash script untuk dekripsinya.
+<li>Buatkan juga bash script untuk dekripsinya
+</ol>
+
+###### Jawab
+Source code: [soal4.sh](https://github.com/sudrajadhadi/SoalShift_modul1_B07/blob/master/soal4.sh)
+
+* diminta untuk menyimpan file dalam format jam dan tanggal, maka format jam akan disimpan dalam variabel `$nama_file`
+    ````bash
+    nama_file=$(date +"%H:%M %d-%m-%Y")
+    ```
+    
+* enkripsi ada dua macam, untuk huruf kecil dan besar
+    ```bash
+    kecil=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+    syslog=$(</var/log/syslog)
+    syslog=$(echo "$syslog" | tr "${kecil:0:26}" "${kecil:${hour}:26}")
+
+    besar=ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
+    nama_file=$(echo "$syslog" | tr "${besar:0:26}" "${besar:${hour}:26}")
+    ```
+    
+* backup file syslog setiap jam dengan menggunakan crontab
+    ```bash
+    0 * * * * /home/drajad/Documents/shift1/soal4.sh
+    ```
+    
+* membuat script untuk dekripsi file backup sebelumnya
 
 ### Nomer 5 
 
