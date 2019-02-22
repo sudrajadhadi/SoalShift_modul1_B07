@@ -32,8 +32,8 @@ Source code: [soal1.sh](https://github.com/sudrajadhadi/SoalShift_modul1_B07/blo
 * untuk menjalankan script ini pada pukul 14:14 pada tanggal 14 Februari (kondisi pertama) atau hari tersebut adalah hari jumat pada bulan Februari (kondisi kedua), gunakan `crontab -e`
 
     ```bash
-    14 14 14 2 * /home/user/directory/namafile       #untuk kondisi pertama
-    * * * 2 5 /home/user/directory/namafile          #untuk kondisi kedua
+    14 14 14 2 * ~/home/user/directory/namafile       #untuk kondisi pertama
+    * * * 2 5 ~/home/user/directory/namafile          #untuk kondisi kedua
     ```
 
 ### Nomer 2
@@ -159,5 +159,5 @@ Source code: [soal5.sh](https://github.com/sudrajadhadi/SoalShift_modul1_B07/blo
 * untuk menjalankan script tersebut setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst. gunakan `crontab -e`
 
     ```bash
-    2-30/6 * * * * /home/user/modul1/[namafile]
+    2-30/6 * * * * ~/home/user/modul1/namafile
     ```
