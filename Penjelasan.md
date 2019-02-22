@@ -130,6 +130,15 @@ Source code: [soal3.sh](https://github.com/sudrajadhadi/SoalShift_modul1_B07/blo
     echo "[variabel penyimpan password]" [namafile]
     ```
 
+### Nomer 4
+Backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
+<ol type="a">
+<li>Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang memiliki urutan ke 12+2 = 14
+<li>Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke empat belas, dan seterusnya
+<li>setelah huruf z akan kembali ke huruf a
+<li>Backup file syslog setiap jam
+<li>Buatkan juga bash script untuk dekripsinya.
+
 ### Nomer 5 
 
 Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
