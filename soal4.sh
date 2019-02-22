@@ -1,18 +1,18 @@
 #!/bin/bash
 
-hour=$(date +"%H")
+A=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+B=abcdefghijklmnopqrstuvwxyz
 
-if [[ ${hour:0:1} -eq 0 ]]
-then
-    hour=${hour:1:1}
-fi
+a=($(echo ${A[@]})$(echo ${A[@]}))
+b=($(echo ${B[@]})$(echo ${B[@]}))
+hour=`date +"%H"`
+x=$hour
 
-kecil=abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
-syslog=$(</var/log/syslog)
-syslog=$(echo "$syslog" | tr "${kecil:0:26}" "${kecil:${hour}:26}")
+data1=($(echo ${A[@]})$(echo ${B[@]}))
+kata1=$(echo $A | tr "${A:0:26}" "${a:${x}:26}")
+kata2=$(echo $B | tr "${B:0:26}" "${b:${x}:26}")
+data2=($(echo ${kata1[@]})$(echo ${kata2[@]}))
 
-besar=ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
-nama_file=$(echo "$syslog" | tr "${besar:0:26}" "${besar:${hour}:26}")
+nama_file=`date +"%H:%M %d-%m-%Y"`
 
-thishour=$(date +"%H:%M %d-%m-%Y")
-echo "$syslog" > "$nama_file".log
+< /var/log/syslog > "$nama_file" tr "$data1" "$data2"
