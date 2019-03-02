@@ -1,7 +1,7 @@
 #!/ bin/bash/
 
 cd /home/xhazimix/Documents/sisop/prak1/soal1
-unzip 'nature.zip'
+unzip nature.zip
 
 for file in "nature/"*
 do
