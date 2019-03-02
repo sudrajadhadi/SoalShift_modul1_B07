@@ -1,0 +1,5 @@
+#soal1
+14 14 * 2 5 ~/home/xhazimix/Documents/sisop/prak1/soal1/soal1.sh
+
+#soal5
+2-30/6 * * * * ~/home/xhazimix/Documents/sisop/prak1/soal5/soal5.sh
